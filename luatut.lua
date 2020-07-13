@@ -81,3 +81,20 @@ else
 end
 
 print(string.format("not true = %s", tostring(not true)))
+
+--ternary operator
+
+-- canVote =  age > 18 ? true : false
+canVote = age > 18 and true or false
+
+io.write("Can i vote :", tostring(canVote), '\n')
+
+
+quote = "I changed my password to incorrect. So that is  a messed scenario now"
+
+io.write("quote length ", string.len(quote), '\n')
+io.write("quote string replace  ", string.gsub(quote, "changed", "Switched my"), '\n')
+io.write("find the index of a word in string  ", string.find(quote, "password"), '\n')
+
+io.write("QUOTE UPPER ", string.upper(quote), '\n')
+io.write("quote lower", string.lower(quote), '\n')
