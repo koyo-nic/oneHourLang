@@ -192,3 +192,29 @@ splitStrTable, numOfStr = splitStr("The turtle that walks faster than a lamborgh
 for j =1, numOfStr-1 do
     print(string.format("%d : %s", j, splitStrTable[j]))
 end
+
+function getSumMore(...)
+    local sum = 0
+    
+    for k,v in pairs{...} do
+        sum = sum + v
+    end 
+    return sum
+end
+
+io.write("Sum", getSumMore(1, 2, 3, 4, 5, 6, 7, 8, 9), "\n")
+
+-- function as a variable
+doubleIt = function(x) return math.pow(x, 3) end
+
+print(doubleIt(8))
+-- Closure a function that can access local var out of an enclosing function
+
+function outerFunc()
+    local i = 0
+
+    return function ()
+        i = i + 1
+        return i
+    end
+end
