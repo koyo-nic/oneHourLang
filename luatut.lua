@@ -37,8 +37,47 @@ io.write(type(isAbleToVote), '\n')
 io.write(type(madeUpVar), "\n")
 
 -- math functions
-io.write("29 + 45", 29+45, "\n")
-io.write("29 - 45", 29-45, "\n")
-io.write("29 * 45", 29*45, "\n")
-io.write("29 / 45", 29/45, "\n")
-io.write("29.3 % 45", 29%45, "\n")
+--[[
+    floor ceil, max, min, sin, cos, asin, acos, exp, log, log10, pow, sqrt, 
+    random, randomseed
+
+]]
+io.write("29 + 45  =", '\t', 29+45, "\n")
+io.write("29 - 45  =", '\t', 29-45, "\n")
+io.write("29 * 45  =", '\t', 29*45, "\n")
+io.write("29 / 45  =", '\t', 29/45, "\n")
+io.write("29.3 % 45  =", '\t', 29%45, "\n")
+
+
+io.write("floor(2.345)  =", '\t',math.floor(2.345), '\n')
+io.write("ceil(2.345)  =", '\t',math.ceil(2.345), '\n')
+io.write("max(5, 8)  =", '\t',math.max(5, 8), '\n')
+io.write("min(5, 8)  =", '\t',math.min(5, 8), '\n')
+io.write("pow(8,2)  =", '\t',math.pow(8, 2), '\n')
+io.write("sqrt(64)  =", '\t',math.sqrt(64), '\n')
+
+io.write("math.random()  :", '\t', math.random(), '\n')
+io.write("math.random (10) :", '\t', math.random(10), '\n')
+io.write("math.random (5, 100) :", '\t', math.random(5, 100), '\n')
+
+io.write(math.randomseed(os.time()))
+
+print(string.format("Pi = %.10f", math.pi))
+
+--Conditionals:
+--Logical operators: and or not
+--Relational operators: > < >= <= == ~=
+
+age = 13
+
+if age < 16 then
+    io.write("You right about the same age as my son", "\n")
+    local localVar = 10
+    print("local var", localVar)
+elseif (age <=16) and (age < 18) then
+    io.write("Actually you can drive", "\n")
+else
+    io.write("You can vote as well baba", "\n")
+end
+
+print(string.format("not true = %s", tostring(not true)))
