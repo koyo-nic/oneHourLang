@@ -160,3 +160,35 @@ for i = 0,9 do
     end
     print()
 end
+
+-- functions in lua
+
+function getSum(arg1, arg2, arg3)
+    return tonumber(arg1 + arg2 + arg3)
+    
+end
+
+io.write("enter any a number")
+arg1 = io.read()
+io.write("enter next number")
+arg2 = io.read()
+io.write("enter next number")
+arg3 = io.read()
+print(string.format("sum of 3 numbers %d", getSum(arg1, arg2, arg3)))
+
+function splitStr(thestring)
+    stringTable = {}
+    local i = 1
+    for str in string.gmatch(thestring, "[^%s]+") do
+        stringTable[i] = str
+        i = i +1
+    end
+
+    return stringTable, i
+end
+
+splitStrTable, numOfStr = splitStr("The turtle that walks faster than a lamborghini")
+
+for j =1, numOfStr-1 do
+    print(string.format("%d : %s", j, splitStrTable[j]))
+end
