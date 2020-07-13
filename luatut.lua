@@ -98,3 +98,65 @@ io.write("find the index of a word in string  ", string.find(quote, "password"),
 
 io.write("QUOTE UPPER ", string.upper(quote), '\n')
 io.write("quote lower", string.lower(quote), '\n')
+
+--Looping and branching
+
+i = 1
+
+while (i<=10) do
+    io.write(i)
+    i = i +1
+
+    if i == 8  then break end
+end
+
+print("\n")
+
+repeat
+    io.write("Enter your Guess :")
+
+    guess = io.read()
+
+until tonumber(guess) == 15
+
+for  i = 1, 10, 1 do
+    io.write(i, "\n")
+end
+
+months = {"January", "February", "March", "April", "May", "June", "July", "August", 
+"September", "October", "November", "December"}
+
+for key, value in pairs(months) do
+    io.write(key, " :", value, "\n")
+end
+
+aTable = {}
+
+for i =1, 10 do
+    aTable[i] = i
+end
+
+io.write("First :", aTable[1], "\n")
+io.write("Number of table Items : ", #aTable, "\n")
+
+table.insert(aTable, 1, 0)
+io.write("First :", aTable[10], "\n")
+
+print(table.concat(aTable, ","))
+
+aMultiTable = {}
+
+for i = 0, 9 do
+    aMultiTable[i] = {}
+    for j = 0, 9 do
+        aMultiTable[i][j] = tostring(i) .. tostring(j)
+    end
+end
+io.write("Table[0][0] :", aMultiTable[0][0], '\n')
+
+for i = 0,9 do
+    for j = 0, 9 do
+        io.write(aMultiTable[i][j], ":")
+    end
+    print()
+end
