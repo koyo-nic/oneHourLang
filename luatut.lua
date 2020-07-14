@@ -269,6 +269,8 @@ readFile:write("Random string duck typing directly to lua init \n")
 readFile:write("Random string duck typing directly to lua init \n")
 readFile:write("Random string duck typing directly to lua init \n")
 readFile:write("Random string duck typing directly to lua init \n")
+readFile:write("After seeking back to the zero index aha \n")
+readFile:write("After seeking back to the evnen more strings \n")
 
 readFile:seek("set", 0)
 
@@ -280,8 +282,21 @@ readFile = io.open("testingFiles.lua", "a+")
 
 readFile:write("After seeking back to the zero index aha \n")
 readFile:write("After seeking back to the evnen more strings \n")
+readFile:write("Random string duck typing directly to lua init \n")
+readFile:write("Random string duck typing directly to lua init \n")
+readFile:write("Random string duck typing directly to lua init \n")
+readFile:write("Random string duck typing directly to lua init \n")
+readFile:write("Random string duck typing directly to lua init \n")
 
 
 readFile:seek("set", 0)
 print(readFile:read("a"))
 readFile:close()
+
+-- Working with modules:(like python can be full of libraries, functions and variables)
+
+convertModule = require("convert")
+io.write("please enter a measurement in feet \n")
+measure = io.read()
+
+print(string.format("%.3f cm", convertModule.ftToCm(measure)))
