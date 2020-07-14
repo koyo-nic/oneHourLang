@@ -300,3 +300,62 @@ io.write("please enter a measurement in feet \n")
 measure = io.read()
 
 print(string.format("%.3f cm", convertModule.ftToCm(measure)))
+
+-- MetaTables: Define on how operations should be done on tables:
+-- adding, substracting, concatanating, comparing, dividing etc
+
+aTable = {}
+
+for x = 1, 20 do
+    aTable[x] = x
+end
+
+mt = {
+    __add = function (table1, table2)
+        sumTable = {}
+        
+        for y = 1, #table1 do
+            if (table1[y] ~= nil) and (table2[y] ~= nil) then
+                sumTable[y] = table1[y] + table2[y]
+            else
+                sumTable[y] = 0
+            end
+        end
+        return sumTable
+    end,
+
+    __sub = function (table1, table2)
+        sumTable = {}
+        
+        for y = 1, #table1 do
+            if (table1[y] ~= nil) and (table2[y] ~= nil) then
+                sumTable[y] = table1[y] - table2[y]
+            else
+                sumTable[y] = 0
+            end
+        end
+        return sumTable
+    end,
+-- Homwork, try out if this values work for less than or equal to
+    __eq = function(table1, table2)
+        return table1.value == table2.value
+    end,
+
+    __lt = function(table1, table2)
+        return table1.value < table2.value
+    end,
+
+    __le = function(table1, table2)
+        return table1.value <= table2.value
+    end
+}
+setmetatable(aTable, mt)
+
+print(aTable == aTable)
+print(aTable == aMultiTable)
+
+addTable = {}
+addTable = aTable + aTable
+for z = 1, #aTable do
+    print(addTable[z])
+end
