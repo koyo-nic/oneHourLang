@@ -218,3 +218,20 @@ function outerFunc()
         return i
     end
 end
+
+getI = outerFunc()
+
+print(getI())
+print(getI())
+
+-- coroutines in lua: similar to thread in other languages except they can not run in parallel
+
+co = coroutine.create(function ()
+    for i =1, 10, 1 do
+        print(i)
+        print(coroutine.status(co))
+        if i == 5 then coroutine.yield() end
+    end
+end)
+
+print(coroutine.status(co))
