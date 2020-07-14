@@ -250,3 +250,38 @@ end)
 coroutine.resume(cor2)
 coroutine.resume(co)
 print(coroutine.status(co))
+
+-- file io: not so many resources available online
+--[[Working with files : 
+r: Read only(default)
+w: Overwrite or create a new file
+a: Append or create a new file
+r+: Read & Write an existing file
+w+: Overwrite read or create a file
+a+: Append read or create a file
+]]
+
+readFile = io.open("testingFiles.lua", "w+")
+
+-- writing to a file
+readFile:write("Random string duck typing directly to lua init \n")
+readFile:write("Random string duck typing directly to lua init \n")
+readFile:write("Random string duck typing directly to lua init \n")
+readFile:write("Random string duck typing directly to lua init \n")
+readFile:write("Random string duck typing directly to lua init \n")
+
+readFile:seek("set", 0)
+
+print(readFile:read("a"))
+readFile:close()
+--  Appending to text file
+
+readFile = io.open("testingFiles.lua", "a+")
+
+readFile:write("After seeking back to the zero index aha \n")
+readFile:write("After seeking back to the evnen more strings \n")
+
+
+readFile:seek("set", 0)
+print(readFile:read("a"))
+readFile:close()
