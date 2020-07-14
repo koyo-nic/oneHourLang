@@ -239,3 +239,14 @@ print(coroutine.status(co))
 coroutine.resume(co)
 
 print(coroutine.status(co))
+
+-- another coroutine
+cor2 = coroutine.create(function()
+    for  i = 101, 110, 1 do
+        print(i)
+    end
+end)
+
+coroutine.resume(cor2)
+coroutine.resume(co)
+print(coroutine.status(co))
