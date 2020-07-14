@@ -235,3 +235,7 @@ co = coroutine.create(function ()
 end)
 
 print(coroutine.status(co))
+
+coroutine.resume(co)
+
+print(coroutine.status(co))
