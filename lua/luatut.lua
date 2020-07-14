@@ -1,3 +1,4 @@
+-- http://www.newthinktank.com/2015/06/learn-lua-one-video/
 -- the usual hello world. single line comment
 print("Hello world")
 --[[
@@ -169,11 +170,11 @@ function getSum(arg1, arg2, arg3)
 end
 
 io.write("enter any a number")
-arg1 = io.read()
+arg1 = tonumber(io.read())
 io.write("enter next number")
-arg2 = io.read()
+arg2 = tonumber(io.read())
 io.write("enter next number")
-arg3 = io.read()
+arg3 = tonumber(io.read())
 print(string.format("sum of 3 numbers %d", getSum(arg1, arg2, arg3)))
 
 function splitStr(thestring)
@@ -295,9 +296,9 @@ readFile:close()
 
 -- Working with modules:(like python can be full of libraries, functions and variables)
 
-convertModule = require("convert")
+convertModule = require("lua/convert")
 io.write("please enter a measurement in feet \n")
-measure = io.read()
+measure = tonumber(io.read())
 
 print(string.format("%.3f cm", convertModule.ftToCm(measure)))
 
@@ -366,3 +367,26 @@ for z = 1, #aTable do
     print(subTable[z], "\t")
 end
 
+-- Lua doesnt directly support oop but there are ways around it using metatables
+
+Animal = {height = 0, weight = 0, name = "No Name", sound = "No sound"}
+
+function Animal:new(height, weight, name, sound)
+    setmetatable({}, Animal)
+
+    self.height = height
+    self.weight = weight
+    self.name = name
+    self.sound = sound
+
+    return self
+end
+
+function Animal:toString()
+    animalStr = string.format("%s weighs %.2f lbs, is %.1f in tall and says %s", self.name, self.weight, self.height, self.sound)
+    return animalStr
+end
+spot = Animal:new(10, 15, "Spot", "woof Woof")
+
+print(spot.height)
+print(spot:toString())
