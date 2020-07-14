@@ -390,3 +390,33 @@ spot = Animal:new(10, 15, "Spot", "woof Woof")
 
 print(spot.height)
 print(spot:toString())
+
+--  inheritance in lua.
+
+Cat = Animal:new()
+
+function Cat:new(height, weight, name, sound, favFood)
+    setmetatable({}, Cat)
+
+    -- self reference to values for this animal
+    self.height = height
+    self.weight = weight
+    self.name = name
+    self.sound = sound
+    self.favFood = favFood
+
+    return self
+end
+
+-- overload animal function
+
+function Cat:toString()
+    catStr = string.format("%s weighs %.1f lbs, is %.1f in tall, sys %s and loves %s", self.name, self.weight, self.height, self.sound, self.favFood)
+    return catStr
+end
+
+-- create a cat instance
+
+fluffcat = Cat:new(10, 25, "Fluffy", "Meow", "Tuna")
+
+print(fluffcat:toString())
