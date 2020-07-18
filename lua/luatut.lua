@@ -1,3 +1,4 @@
+#!/usr/bin/lua
 -- http://www.newthinktank.com/2015/06/learn-lua-one-video/
 -- the usual hello world. single line comment
 print("Hello world")
@@ -7,6 +8,13 @@ print("Hello world")
 ]]
 
 name = "Davince"
+anotherName = 'jakanees'
+--  multiline strings:
+multilineString = [[
+    This is probably weird but
+    Hey, Dont you think that 
+    Lua Rocks?
+]]
 io.write("Size of string", #name, "\n")
 
 -- name = 4
@@ -420,3 +428,7 @@ end
 fluffcat = Cat:new(10, 25, "Fluffy", "Meow", "Tuna")
 
 print(fluffcat:toString())
+
+-- extras
+u = {['@!#'] = 'qbert', [{}] = 1729, [6.28] = 'tau'}
+print(u['@!#'])
