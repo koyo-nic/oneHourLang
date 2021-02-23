@@ -27,3 +27,4 @@ Test Suite 'All tests' passed at 2021-02-23 15:01:47.657
 - working with more than one source files
 - [``touch Greeter.swift``](Sources/Greeter.swift)
 - Test running the source files through the debuggers [`swift -g factorial.swift`](Sources/Ahoy/factorial.swift)
+- run the `swiftc -g factorial.swift` to generate debug [info](https://swift.org/getting-started/) then run the executable through **LLDB** debugger using `lldb factorial`
