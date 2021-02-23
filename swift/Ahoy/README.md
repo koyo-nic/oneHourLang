@@ -26,3 +26,4 @@ Test Suite 'All tests' passed at 2021-02-23 15:01:47.657
 - `swift run` to run the created executable
 - working with more than one source files
 - [``touch Greeter.swift``](Sources/Greeter.swift)
+- Test running the source files through the debuggers [`swift -g factorial.swift`](Sources/Ahoy/factorial.swift)
