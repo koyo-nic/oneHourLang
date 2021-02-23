@@ -34,8 +34,8 @@ fn main() {
                 println!("Great you guessed right");
                 break;
             }
-
         }
     }
-
 }
+
+        
