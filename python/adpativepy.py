@@ -22,12 +22,20 @@ l = [int(input()) for _ in range(t[1])]
 print(t[2](l))
 
 class Area:
+    """ Generalized simple geometry area calculation """
     from math import sqrt
-    PI = 3.14
-    def rectangle(self, a, b):
+    PI:float = 3.14
+    def rectangle(self, a:float, b:float) -> float:
+        """Calculate Area of a rectangular or square geom
+        :param a: first side of the geom
+        :type a: float
+        :param b: second side of the geom
+        :type b: foat
+        :return Area
+        """
         return a*b
     def circle(self, radius):
-        return pi*(radius**2)
+        return Area.PI*(radius**2)
     def triangle(self, a,b,c):
         p = (a + b + c)/2
         return sqrt(p*(p-a)*(p-b)*(p-c))
