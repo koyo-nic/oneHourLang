@@ -1,0 +1,11 @@
+{
+    "Lua.diagnostics.globals": [
+        "bigNum",
+        "name",
+        "floatPrecicision",
+        "longString"
+    ],
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ]
+}
