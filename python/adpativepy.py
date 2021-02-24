@@ -26,7 +26,7 @@ class Area:
     from math import sqrt
     PI:float = 3.14
     def rectangle(self, a:float, b:float) -> float:
-        """Calculate Area of a rectangular or square geom
+        """Calculate Area of a rectangular or square geom.
         :param a: first side of the geom
         :type a: float
         :param b: second side of the geom
